@@ -10,18 +10,20 @@ Source0:	http://games.flowix.com/files/einstein/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-makefile.patch
 URL:		http://games.flowix.com/
 BuildRequires:	SDL-devel
-BuildRequires:  SDL_mixer-devel
-BuildRequires:  SDL_ttf-devel
+BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_ttf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The game goal is to open all cards in square of 6x6 cards. For this, a number of hints describing relations between card positions are given.
+The game goal is to open all cards in square of 6x6 cards. For this, a
+number of hints describing relations between card positions are given.
 
 %description -l pl
-Celem gry jest ods³oniêcie wszystkich kart w kwadracie 6x6 za pomoc± podpowiedzi opisuj±cych relacje pomiêdzy poszczególnymi kartami.
+Celem gry jest ods³oniêcie wszystkich kart w kwadracie 6x6 za pomoc±
+podpowiedzi opisuj±cych relacje pomiêdzy poszczególnymi kartami.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %patch0 -p1
 
 %build
