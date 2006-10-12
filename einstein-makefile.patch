@@ -1,0 +1,22 @@
+--- einstein-2.0/Makefile~	2005-09-25 23:20:30.000000000 +0200
++++ einstein-2.0/Makefile	2006-10-12 18:30:03.000000000 +0200
+@@ -5,7 +5,7 @@
+ ########################################
+ 
+ # installation prefix
+-PREFIX=/usr/local
++PREFIX=/usr
+ 
+ ########################################
+ #
+@@ -61,8 +61,8 @@
+ 	./$(TARGET)
+ 
+ install: $(TARGET)
+-	$(INSTALL) -s -D $(TARGET) $(PREFIX)/bin/$(TARGET)
+-	$(INSTALL) -D einstein.res $(PREFIX)/share/einstein/res/einstein.res
++	$(INSTALL) -s -D $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
++	$(INSTALL) -D einstein.res $(DESTDIR)$(PREFIX)/share/einstein/res/einstein.res
+ 	
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
+ 
