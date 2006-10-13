@@ -12,6 +12,7 @@ URL:		http://games.flowix.com/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +28,9 @@ podpowiedzi opisuj±cych relacje pomiêdzy poszczególnymi kartami.
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CXX="%{__cxx}" \
+	OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
