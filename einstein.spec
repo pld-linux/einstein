@@ -1,5 +1,5 @@
 Summary:	An implementation of Albert Einstein's puzzle
-Summary(pl.UTF-8):   Implementacja gry logicznej Alberta Einsteina
+Summary(pl.UTF-8):	Implementacja gry logicznej Alberta Einsteina
 Name:		einstein
 Version:	2.0
 Release:	1
