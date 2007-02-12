@@ -1,5 +1,5 @@
 Summary:	An implementation of Albert Einstein's puzzle
-Summary(pl):	Implementacja gry logicznej Alberta Einsteina
+Summary(pl.UTF-8):   Implementacja gry logicznej Alberta Einsteina
 Name:		einstein
 Version:	2.0
 Release:	1
@@ -19,9 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The game goal is to open all cards in square of 6x6 cards. For this, a
 number of hints describing relations between card positions are given.
 
-%description -l pl
-Celem gry jest ods³oniêcie wszystkich kart w kwadracie 6x6 za pomoc±
-podpowiedzi opisuj±cych relacje pomiêdzy poszczególnymi kartami.
+%description -l pl.UTF-8
+Celem gry jest odsÅ‚oniÄ™cie wszystkich kart w kwadracie 6x6 za pomocÄ…
+podpowiedzi opisujÄ…cych relacje pomiÄ™dzy poszczegÃ³lnymi kartami.
 
 %prep
 %setup -q
