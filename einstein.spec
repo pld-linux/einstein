@@ -2,7 +2,7 @@ Summary:	An implementation of Albert Einstein's puzzle
 Summary(pl.UTF-8):	Implementacja gry logicznej Alberta Einsteina
 Name:		einstein
 Version:	2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://games.flowix.com/files/einstein/%{name}-%{version}-src.tar.gz
