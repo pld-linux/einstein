@@ -8,6 +8,8 @@ Group:		X11/Applications/Games
 Source0:	http://games.flowix.com/files/einstein/%{name}-%{version}-src.tar.gz
 # Source0-md5:	c1d98e761c10af63f03462ead625f80c
 Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-gcc43.patch
+Patch2:		%{name}-kill-warnings.patch
 URL:		http://games.flowix.com/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_mixer-devel
@@ -26,6 +28,8 @@ podpowiedzi opisujących relacje pomiędzy poszczególnymi kartami.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} \
