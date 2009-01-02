@@ -1,0 +1,62 @@
+--- einstein-2.0/horhints.cpp~	2005-08-22 23:36:12.000000000 +0200
++++ einstein-2.0/horhints.cpp	2009-01-02 14:20:10.000000000 +0100
+@@ -85,10 +85,12 @@
+     Rule *r = NULL;
+     int no = row * HINTS_COLS + col;
+     if (no < (int)rules.size())
++    {
+         if (showExcluded)
+             r = excludedRules[no];
+         else
+             r = rules[no];
++    }
+     if (r)
+         r->draw(x, y, iconSet, no == highlighted);
+     else
+--- einstein-2.0/lexal.h~	2005-08-14 04:40:58.000000000 +0200
++++ einstein-2.0/lexal.h	2009-01-02 14:20:51.000000000 +0100
+@@ -8,7 +8,7 @@
+ class Lexeme
+ {
+     public:
+-        typedef enum Type {
++        enum Type {
+             String,
+             Integer,
+             Float,
+--- einstein-2.0/table.h~	2005-08-14 04:40:58.000000000 +0200
++++ einstein-2.0/table.h	2009-01-02 14:21:11.000000000 +0100
+@@ -13,7 +13,7 @@
+ class Value
+ {
+     public:
+-        typedef enum Type {
++        enum Type {
+             Integer,
+             Double,
+             String,
+--- einstein-2.0/unicode.cpp~	2009-01-02 14:25:36.000000000 +0100
++++ einstein-2.0/unicode.cpp	2009-01-02 14:25:59.000000000 +0100
+@@ -240,11 +240,11 @@
+ 		break;
+ 	      else
+                 if (error)
+-		  *error = L"Partial character sequence at end of input";
++		  *error = (wchar_t *) L"Partial character sequence at end of input";
+ 	    }
+ 	  else
+             if (error)
+-              *error = L"Invalid byte sequence in conversion input";
++              *error = (wchar_t *) L"Invalid byte sequence in conversion input";
+ 
+ 	  goto err_out;
+ 	}
+@@ -381,7 +381,7 @@
+ 	  if (items_read)
+ 	    *items_read = i;
+           if (error)
+-              *error = L"Character out of range for UTF-8";
++              *error = (wchar_t *) L"Character out of range for UTF-8";
+ 	  goto err_out;
+ 	}
+       

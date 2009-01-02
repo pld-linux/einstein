@@ -1,0 +1,20 @@
+--- einstein-2.0/convert.h~	2005-08-14 04:40:58.000000000 +0200
++++ einstein-2.0/convert.h	2009-01-02 14:15:08.000000000 +0100
+@@ -5,6 +5,7 @@
+ #include <iostream>
+ #include <sstream>
+ #include <string>
++#include <typeinfo>
+ 
+ #include "exceptions.h"
+ #include "unicode.h"
+--- einstein-2.0/unicode.cpp~	2005-08-14 04:40:58.000000000 +0200
++++ einstein-2.0/unicode.cpp	2009-01-02 14:16:51.000000000 +0100
+@@ -5,6 +5,7 @@
+ #endif
+ #include "unicode.h"
+ #include "exceptions.h"
++#include <cstring>
+ 
+ 
+ /// Returns length of wide character in utf-8
