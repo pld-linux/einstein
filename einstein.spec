@@ -2,11 +2,12 @@ Summary:	An implementation of Albert Einstein's puzzle
 Summary(pl.UTF-8):	Implementacja gry logicznej Alberta Einsteina
 Name:		einstein
 Version:	2.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://games.flowix.com/files/einstein/%{name}-%{version}-src.tar.gz
 # Source0-md5:	c1d98e761c10af63f03462ead625f80c
+Source1:	%{name}.desktop
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-gcc43.patch
 Patch2:		%{name}-kill-warnings.patch
@@ -38,9 +39,12 @@ podpowiedzi opisujących relacje pomiędzy poszczególnymi kartami.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,3 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
